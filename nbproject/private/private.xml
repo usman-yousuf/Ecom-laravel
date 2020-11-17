@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/D:/xampp/htdocs/pizzahouse/pizzahouse/resources/views/Product.blade.php</file>
             <file>file:/D:/xampp/htdocs/pizzahouse/pizzahouse/routes/web.php</file>
             <file>file:/D:/xampp/htdocs/pizzahouse/pizzahouse/database/migrations/2020_11_12_132348_create_user_table.php</file>
-            <file>file:/D:/xampp/htdocs/pizzahouse/pizzahouse/database/seeders/Userseeder.php</file>
+            <file>file:/D:/xampp/htdocs/pizzahouse/pizzahouse/app/Http/Controllers/ProductController.php</file>
             <file>file:/D:/xampp/htdocs/pizzahouse/pizzahouse/.env</file>
+            <file>file:/D:/xampp/htdocs/pizzahouse/pizzahouse/database/migrations/2020_11_13_121325_create_table_product.php</file>
         </group>
     </open-files>
 </project-private>

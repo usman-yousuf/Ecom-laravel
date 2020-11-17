@@ -30,5 +30,38 @@
         height: 500px;
         padding-top: 100px; 
     }
+    .slider-img
+    {
+        height: 400px !important;
+    }
+    .custom-product
+    {
+        height: 700px; 
+    }
+    .slider-text
+    {
+        background-color: skyblue;
+        width: 500px;
+        position: absolute;
+        right: 30%;
+        left: 50%;
+    }
+    .trending-img
+    {
+        height: 100px;
+    }
+    .trending-items
+    {
+        float: left;
+        width: 25%;
+    }
+    .trending-wrapper
+    {
+        margin: 30px;
+    }
+    .detail-img
+    {
+        height: 300px;
+    }
 </style>
 </html>
