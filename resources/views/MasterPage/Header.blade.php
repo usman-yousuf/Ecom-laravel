@@ -1,3 +1,16 @@
+<?php  
+use App\Http\Controllers\ProductController;
+
+// if(session()->has('user'))
+//   $total=ProductController::cartitems();
+//   // dd($total);
+// else
+//  $total=0; 
+
+// aletrnative to above (called ternary operator expression
+// (express == true) ? true case : false case;
+$total = (session()->has('user'))? ProductController::cartitems() : 0;
+ ?>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -25,8 +38,9 @@
         <button type="submit" class="btn btn-default">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Cart(0)</a></li>
-         <li><a href="loginshow">Login</a></li>
+          <li><a href="#">Cart({{$total}})</a></li>
+          <li><a href="../loginshow">Login</a></li>
+          <li><a href="{{route('logout')}}">Logout</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

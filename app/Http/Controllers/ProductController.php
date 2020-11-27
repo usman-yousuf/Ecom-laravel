@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\product;
-use App\Models\cart;
+use App\Models\Product;
+use App\Models\Cart;
+use Session;
 class ProductController extends Controller
 {
     public function index()
@@ -33,15 +34,29 @@ class ProductController extends Controller
      // dd('ssss');
       if(session()->has('user'))
       {
-       $cart = new Cart;
-       $cart->user_id=session()->get('user')['id'];
-       $cart->product_id=$id;
-       $cart->save();
-       return redirect('/'); 
+        $userId=session::get('user')['id'];
+        $cart = new Cart;
+        $cart->user_id=$userId;
+        $cart->product_id=$id;
+        $cart->save();
+        return redirect('/'); 
       }  
       else
       {
-       return redirect('/');
+        return redirect('/loginshow');
       }
     }
+
+    public static function cartitems()
+    { 
+      $userId=session::get('user')['id'];
+      // dd($userId);
+      // \DB::enableQueryLog();
+      $cartCount =  Cart::where('user_id',$userId)->count();
+      // print_r(\Db::getQueryLog() );exit;
+      // dd($cartCount);
+      return $cartCount;
+    }
+
+  
 }

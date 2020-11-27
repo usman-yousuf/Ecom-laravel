@@ -21,7 +21,9 @@ Route::get('/loginshow', function () {
    return view('login');
 });
 
-Route::post('/login ' , [ App\Http\Controllers\UserController::class, 'login']);
+Route::post('login-user' , [ App\Http\Controllers\UserController::class, 'login'])->name('loginPost');
+//Route::view("profile", 'Profile');
+Route::get('logout-user' , [ App\Http\Controllers\UserController::class, 'logout'])->name('logout');
 Route::get('/ ' , [ App\Http\Controllers\ProductController::class, 'index'])->name('product.index');
 Route::get('detail/{id}' , [ App\Http\Controllers\ProductController::class, 'detail']);
 Route::get('search' , [ App\Http\Controllers\ProductController::class, 'search']);
