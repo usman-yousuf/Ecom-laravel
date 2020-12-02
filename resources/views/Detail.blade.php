@@ -13,7 +13,7 @@
             <h4>Category: {{$products['category']}}</h4>
             <h4>Discription: {{$products['discription']}}</h4>
             <br><br>
-            <a href="../add_to_cart/{{$products['id']}}">add to cart</a>
+            <a class="btn-btn-success" href="../add_to_cart/{{$products['id']}}">add to cart</a>
             <br><br>
             <button class="btn btn-primary">Buy Now</button>
         </div>

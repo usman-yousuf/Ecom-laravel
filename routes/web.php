@@ -28,3 +28,6 @@ Route::get('/ ' , [ App\Http\Controllers\ProductController::class, 'index'])->na
 Route::get('detail/{id}' , [ App\Http\Controllers\ProductController::class, 'detail']);
 Route::get('search' , [ App\Http\Controllers\ProductController::class, 'search']);
 Route::get('add_to_cart/{id}' , [ App\Http\Controllers\ProductController::class, 'addtocart']);
+Route::get('cartlist' , [ App\Http\Controllers\ProductController::class, 'cartList'])->name('cartlist');
+Route::get('removecart/{id}' , [ App\Http\Controllers\ProductController::class, 'removeCart'])->name('removeCartItem');
+

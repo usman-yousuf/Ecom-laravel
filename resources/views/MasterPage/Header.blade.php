@@ -29,7 +29,6 @@ $total = (session()->has('user'))? ProductController::cartitems() : 0;
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Home</a></li>
         <li class=""><a href="#">Order</a></li>
-        
       </ul>
       <form action="search" class="navbar-form navbar-left">
         <div class="form-group">
@@ -38,10 +37,22 @@ $total = (session()->has('user'))? ProductController::cartitems() : 0;
         <button type="submit" class="btn btn-default">Search</button>
       </form>
       <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Cart({{$total}})</a></li>
-          <li><a href="../loginshow">Login</a></li>
-          <li><a href="{{route('logout')}}">Logout</a></li>
-      </ul>
+          <li><a href="{{ route('cartlist') }}">Cart({{$total}})</a></li>
+     
+      @if(Session::has('user'))
+      <li class="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{Session::get('user')['name']}}
+        <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{{route('logout')}}">Logout</a></li>
+            
+          </ul>
+      </li>
+      @else
+       <li><a href="../loginshow">Login</a></li> 
+      @endif
+          </ul>
+      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
