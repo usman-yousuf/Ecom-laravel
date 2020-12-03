@@ -18,11 +18,12 @@
                 </div> 
              </div>
              <div class="col-sm-3">
-                <a href="{{ route('removeCartItem', [$item->cart_id]) }}" class="btn-btn-warning">Remove to Cart</a>
+                <a href="{{ route('removeCartItem', [$item->cart_id]) }}" class="btn btn-warning">Remove to Cart</a>
              </div>
           </div>
         @endforeach
       </div>
+      <a class="btn btn-success" href="{{ route('orderItemsNow')}}">Order Now</a>
    </div>
 </div>
 @endsection

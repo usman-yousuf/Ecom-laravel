@@ -31,3 +31,6 @@ Route::get('add_to_cart/{id}' , [ App\Http\Controllers\ProductController::class,
 Route::get('cartlist' , [ App\Http\Controllers\ProductController::class, 'cartList'])->name('cartlist');
 Route::get('removecart/{id}' , [ App\Http\Controllers\ProductController::class, 'removeCart'])->name('removeCartItem');
 
+Route::get('ordernow' , [ App\Http\Controllers\ProductController::class, 'orderNow'])->name('orderItemsNow');
+Route::post('order_place' , [ App\Http\Controllers\ProductController::class, 'orderPlace'])->name('orderplace');
+

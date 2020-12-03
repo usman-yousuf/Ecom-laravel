@@ -7,13 +7,13 @@
             <img class="detail-img" src="{{ $products['gallery'] }}"> 
         </div>
         <div class="col-sm-6">
-            <a href="/">Go Back</a>
+            <a class="btn btn-warning" href="/">Go Back</a>
             <h3>Name: {{$products['name']}}</h3>
             <h3>Price: {{$products['price']}}</h3>
             <h4>Category: {{$products['category']}}</h4>
             <h4>Discription: {{$products['discription']}}</h4>
             <br><br>
-            <a class="btn-btn-success" href="../add_to_cart/{{$products['id']}}">add to cart</a>
+            <a class="btn btn-success" href="../add_to_cart/{{$products['id']}}">add to cart</a>
             <br><br>
             <button class="btn btn-primary">Buy Now</button>
         </div>
