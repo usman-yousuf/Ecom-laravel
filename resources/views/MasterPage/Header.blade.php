@@ -28,7 +28,7 @@ $total = (session()->has('user'))? ProductController::cartitems() : 0;
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Home</a></li>
-        <li class=""><a href="#">Order</a></li>
+        <li class=""><a href="{{ route ('orderlist')}}">Order</a></li>
       </ul>
       <form action="search" class="navbar-form navbar-left">
         <div class="form-group">
@@ -49,7 +49,8 @@ $total = (session()->has('user'))? ProductController::cartitems() : 0;
           </ul>
       </li>
       @else
-       <li><a href="../loginshow">Login</a></li> 
+       <li><a href="../loginshow">Login</a></li>
+       <li><a href="{{ route('usersignup') }}">Rgister</a></li> 
       @endif
           </ul>
       

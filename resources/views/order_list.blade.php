@@ -3,8 +3,8 @@
 <div class="custom-product">
     <div class="col-sm-10">
    	  <div class="trending-wrapper">
-      <h4>Result for Products</h4>
-        @foreach($products as $item)
+      <h3>My Order</h3>
+        @foreach($orders as $item)
           <div class="row Searched-items cart-list-divider">
              <div class="col-sm-3">
                 <a href="detail/{{$item->id}}">
@@ -14,16 +14,15 @@
              <div class="col-sm-4">
                 <div class="">
                   <h3>{{$item->name}}</h3>
-                  <h4>{{$item->discription}}</h4>    
+                  <h4>Delivery Status :{{$item->status}}</h4>
+                  <h4>Address :{{$item->address}}</h4>
+                  <h4>Payment Status :{{$item->payment_status}}</h4>
+                  <h4>Payment_ ethod :{{$item->payment_method}}</h4>    
                 </div> 
-             </div>
-             <div class="col-sm-3">
-                <a href="{{ route('removeCartItem', [$item->cart_id]) }}" class="btn btn-warning">Remove to Cart</a>
              </div>
           </div>
         @endforeach
       </div>
-      <a class="btn btn-success" href="{{ route('orderItemsNow')}}">Check out</a>
    </div>
 </div>
 @endsection

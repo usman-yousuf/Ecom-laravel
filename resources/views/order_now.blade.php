@@ -5,7 +5,7 @@
    	  <table class="table">
         <tbody>
           <tr>
-            <td>Amount</td>
+            <td>Item Price</td>
             <td>$ {{$total}}</td>
             </tr>
           <tr>

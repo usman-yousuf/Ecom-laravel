@@ -24,9 +24,9 @@ class UserController extends Controller
             return redirect('/');     
         } 
         
-        
-
     }
+    
+
 
     public function logout(Request $req)
     {   
@@ -36,4 +36,22 @@ class UserController extends Controller
         } 
         return redirect('/loginshow');
     }
+     
+
+    public function register()
+    {
+        return view('register');
+    }
+
+
+    public function userRegister(Request $request)
+    {
+     $user= new User;
+     $user->name= $request->username;
+     $user->email= $request->email;
+     $user->password=Hash::make($request->password);
+     $user->save();
+     return redirect('/loginshow'); 
+    }
+                                  
 }

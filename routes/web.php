@@ -20,7 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/loginshow', function () {
    return view('login');
 });
-
+Route::get('user_sign_up' , [ App\Http\Controllers\UserController::class, 'register'])->name('usersignup');
+Route::post('user_register' , [ App\Http\Controllers\UserController::class, 'userRegister'])->name('register');
 Route::post('login-user' , [ App\Http\Controllers\UserController::class, 'login'])->name('loginPost');
 //Route::view("profile", 'Profile');
 Route::get('logout-user' , [ App\Http\Controllers\UserController::class, 'logout'])->name('logout');
@@ -34,3 +35,4 @@ Route::get('removecart/{id}' , [ App\Http\Controllers\ProductController::class, 
 Route::get('ordernow' , [ App\Http\Controllers\ProductController::class, 'orderNow'])->name('orderItemsNow');
 Route::post('order_place' , [ App\Http\Controllers\ProductController::class, 'orderPlace'])->name('orderplace');
 
+Route::get('order_list' , [ App\Http\Controllers\ProductController::class, 'orderList'])->name('orderlist');

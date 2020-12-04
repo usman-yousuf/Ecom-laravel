@@ -10,11 +10,13 @@ use Session;
 use Illuminate\Support\Facades\DB;
 class ProductController extends Controller
 {
+    
     public function index()
     {
      $data= Product::all();
      return view('product',['products'=>$data]);
     }
+    
     
     
     public function detail($id)
@@ -24,12 +26,14 @@ class ProductController extends Controller
     }
 
     
+    
     public function search(Request $request)
     {
       $data= Product::where('name','like','%'.$request->input('query').'%')->get();
       return view('search',['products'=>$data]); 
     }
 
+    
     
     public function addtocart($id)
     {
@@ -48,6 +52,7 @@ class ProductController extends Controller
       }
     }
 
+    
     public static function cartitems()
     { 
       $userId=session::get('user')['id'];
@@ -59,6 +64,7 @@ class ProductController extends Controller
       return $cartCount;
     }
 
+    
     public function cartList()
     {
       $userId=session::get('user')['id'];
@@ -70,12 +76,14 @@ class ProductController extends Controller
       return view('cartlist',['products'=>$product]);
     }
 
+    
     public function removeCart($id)
     {
       Cart::destroy($id);
       return redirect('cartlist');
     }
   
+    
     public function orderNow()
     {
       $userId=session::get('user')['id'];
@@ -86,11 +94,11 @@ class ProductController extends Controller
       return view('order_now',['total'=>$total]);
     } 
 
+    
     public function orderPlace(Request $request)
     {
       $userId=session::get('user')['id'];
-      $allcart=Cart::where('user_id',$userId)->get();
-      
+      $allcart=Cart::where('user_id',$userId)->get(); 
       foreach ($allcart as $cart) {
         $order=new Order();
         $order->product_id=$cart['product_id'];
@@ -104,7 +112,18 @@ class ProductController extends Controller
       }
       
       $request->input();
-      return redirect('/');
+      return redirect('order_list');
 
     } 
+
+    
+    public function orderList()
+    {
+      $userId=session::get('user')['id'];
+      $orders= DB::table('orders')
+      ->join('product','orders.product_id','=','product.id')
+      ->where('orders.user_id',$userId)
+      ->get();
+      return view('order_list',['orders'=>$orders]);
+    }
 }

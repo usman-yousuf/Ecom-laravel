@@ -74,5 +74,13 @@
         margin-bottom: 20px;
         padding-bottom: 20px;
     }
+    .panel-body
+    {
+        clear: both;
+    }
+    .panel-default
+    {
+        border: none;
+    }
 </style>
 </html>
